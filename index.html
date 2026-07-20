@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedPulse Automation | Soluciones de Software & Automatización</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="icon" href="img/gemini-svg.svg">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-brand-600 selection:text-white overflow-x-hidden">
+    <header class="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="relative w-10 h-10 bg-gradient-to-br from-brand-600 to-neutral-900 rounded-xl flex items-center justify-center border border-brand-500/30 group-hover:border-brand-500 transition-all red-glow">
+                    <img src="img/gemini-svg.svg" alt="">
+                    <span class="absolute -top-1 -right-1 w-3 h-3 bg-brand-500 rounded-full animate-ping"></span>
+                    <span class="absolute -top-1 -right-1 w-3 h-3 bg-brand-500 rounded-full"></span>
+                </div>
+                <span class="text-xl font-extrabold tracking-wider bg-gradient-to-r from-white via-neutral-200 to-brand-500 bg-clip-text text-transparent">
+                    REDPULSE<span class="text-brand-500">.</span>
+                </span>
+            </a>
+            <nav aria-label="Navegación principal">
+                <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-400">
+                    <li>
+                        <a href="#nosotros" class="hover:text-brand-500 transition-colors">Quiénes Somos</a>
+                    </li>
+                    <li>
+                        <a href="#beneficios" class="hover:text-brand-500 transition-colors">Beneficios</a>
+                    </li>
+                    <li>
+                        <a href="#servicios" class="hover:text-brand-500 transition-colors">Qué Ofrecemos</a>
+                    </li>
+                    <li>
+                        <a href="#equipo" class="hover:text-brand-500 transition-colors">Equipo</a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#contacto" class="hidden md:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all shadow-lg hover:shadow-brand-600/30">
+                <span>Iniciar Proyecto</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <button id="mobile-menu-btn" aria-label="Abrir menú de navegación" class="md:hidden text-neutral-400 hover:text-white focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral-900 border-b border-neutral-800 px-6 py-4">
+            <ul class="flex flex-col gap-4 text-sm font-medium">
+                <li>
+                    <a href="#nosotros" class="block hover:text-brand-500 transition-colors">Quiénes Somos</a>
+                </li>
+                <li>
+                    <a href="#beneficios" class="block hover:text-brand-500 transition-colors">Beneficios</a>
+                </li>
+                <li>
+                    <a href="#servicios" class="block hover:text-brand-500 transition-colors">Qué Ofrecemos</a>
+                </li>
+                <li>
+                    <a href="#equipo" class="block hover:text-brand-500 transition-colors">Equipo</a>
+                </li>
+                <li>
+                    <a href="#contacto" class="block bg-brand-600 hover:bg-brand-700 text-white text-center py-2.5 rounded-lg transition-colors">Iniciar Proyecto</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!-- HERO SECTION -->
+    <section class="relative pt-36 pb-24 md:pt-48 md:pb-32 overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-900/30 border border-brand-500/30 text-brand-500 text-xs font-semibold uppercase tracking-wider mb-8 reveal">
+                <i data-lucide="cpu" class="w-4 h-4"></i>
+                <span>Automatización con Inteligencia de Flujos</span>
+            </div>
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white mb-6 leading-tight reveal">
+                Escala tu empresa al <br class="hidden sm:inline" />
+                <span class="bg-gradient-to-r from-brand-500 via-rose-500 to-red-400 bg-clip-text text-transparent text-glow">
+                    siguiente nivel tecnológico
+                </span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-neutral-400 text-base sm:text-lg mb-10 leading-relaxed reveal">
+                Diseñamos software robusto, arquitecturas ERP e integraciones automatizadas sin fricción que eliminan el trabajo repetitivo y multiplican tu eficiencia operativa.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
+                <a href="#contacto" class="w-full sm:w-auto bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-brand-600/40 flex items-center justify-center gap-2">
+                    <span>Agendar Consulta Gratis</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-200 px-8 py-4 rounded-xl font-semibold transition-all flex items-center justify-center gap-2">
+                    <span>Ver Servicios</span>
+                </a>
+            </div>
+            <div class="mt-16 max-w-4xl mx-auto rounded-2xl bg-neutral-900/90 border border-neutral-800/80 p-4 text-left shadow-2xl red-glow-lg reveal">
+                <div class="flex items-center justify-between pb-3 border-b border-neutral-800 px-2">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                    </div>
+                    <span class="text-xs text-neutral-500 font-mono">redpulse-core ~ automation.js</span>
+                </div>
+                <div class="p-4 font-mono text-xs sm:text-sm text-neutral-300 space-y-2 overflow-x-auto">
+                    <p class="text-neutral-500">// Desplegando flujo automatizado de procesos</p>
+                    <p><span class="text-brand-500">const</span> engine = <span class="text-brand-500">new</span> RedPulseEngine({ mode: <span class="text-emerald-400">'high-performance'</span> });</p>
+                    <p><span class="text-brand-500">await</span> engine.connectServices([<span class="text-emerald-400">'Odoo_ERP'</span>, <span class="text-emerald-400">'Webhooks_API'</span>, <span class="text-emerald-400">'AI_Agents'</span>]);</p>
+                    <p class="text-emerald-400">✔ Estado: Sistema funcionando al 100% de eficiencia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- QUIÉNES SOMOS -->
+    <section id="nosotros" class="py-24 bg-neutral-900/50 border-y border-neutral-800/50 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 reveal">
+                    <div class="inline-flex items-center gap-2 text-brand-500 font-semibold text-sm tracking-widest uppercase">
+                        <i data-lucide="shield-check" class="w-4 h-4"></i>
+                        <span>Quiénes Somos</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white leading-tight">
+                        Transformamos la complejidad técnica en motores de crecimiento.
+                    </h2>
+                    <p class="text-neutral-400 leading-relaxed">
+                        En **RedPulse Automation** unimos la ingeniería de software moderna con la automatización inteligente. Nos especializamos en resolver cuellos de botella operativos mediante la construcción de plataformas a medida, integraciones de sistemas y optimización continua.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl bg-neutral-950 border border-neutral-800">
+                            <h3 class="text-3xl font-black text-brand-500 text-glow">+98%</h3>
+                            <p class="text-xs text-neutral-400 mt-1">Eficiencia Operativa</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-neutral-950 border border-neutral-800">
+                            <h3 class="text-3xl font-black text-brand-500 text-glow">24/7</h3>
+                            <p class="text-xs text-neutral-400 mt-1">Procesos en Autopilot</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative reveal">
+                    <div class="aspect-video rounded-2xl bg-gradient-to-tr from-brand-900/40 via-neutral-900 to-neutral-950 border border-brand-500/20 p-8 flex flex-col justify-between relative overflow-hidden group">
+                        <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-brand-600/20 rounded-full blur-3xl"></div>
+                        <i data-lucide="layers" class="w-12 h-12 text-brand-500 mb-4"></i>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">Ecosistema Integrado</h4>
+                            <p class="text-sm text-neutral-400">Conectamos tus herramientas favoritas para que la información fluya sin intervención manual.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BENEFICIOS -->
+    <section id="beneficios" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="text-brand-500 font-semibold text-sm tracking-widest uppercase">Ventajas Clave</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">¿Por qué automatizar con nosotros?</h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-brand-500/50 transition-all hover:-translate-y-1 reveal">
+                    <div class="w-12 h-12 rounded-xl bg-brand-900/30 border border-brand-500/30 flex items-center justify-center text-brand-500 mb-6">
+                        <i data-lucide="clock" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Ahorro de Tiempo</h3>
+                    <p class="text-sm text-neutral-400">Reducimos hasta un 80% las horas dedicadas a tareas administrativas e ingreso de datos manual.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-brand-500/50 transition-all hover:-translate-y-1 reveal">
+                    <div class="w-12 h-12 rounded-xl bg-brand-900/30 border border-brand-500/30 flex items-center justify-center text-brand-500 mb-6">
+                        <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Cero Errores Humanos</h3>
+                    <p class="text-sm text-neutral-400">Garantizamos precisión total en la transferencia y procesamiento de tu información crítica.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-brand-500/50 transition-all hover:-translate-y-1 reveal">
+                    <div class="w-12 h-12 rounded-xl bg-brand-900/30 border border-brand-500/30 flex items-center justify-center text-brand-500 mb-6">
+                        <i data-lucide="trending-up" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Escalabilidad Directa</h3>
+                    <p class="text-sm text-neutral-400">Tus operaciones crecen en volumen sin necesidad de multiplicar proporcionalmente tu personal.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-brand-500/50 transition-all hover:-translate-y-1 reveal">
+                    <div class="w-12 h-12 rounded-xl bg-brand-900/30 border border-brand-500/30 flex items-center justify-center text-brand-500 mb-6">
+                        <i data-lucide="lock" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Seguridad & Control</h3>
+                    <p class="text-sm text-neutral-400">Estructuras encriptadas y trazabilidad completa de cada evento procesado en el sistema.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- QUÉ OFRECEMOS -->
+    <section id="servicios" class="py-24 bg-neutral-900/50 border-t border-neutral-800/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="text-brand-500 font-semibold text-sm tracking-widest uppercase">Nuestros Servicios</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Soluciones de Software a Medida</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-brand-500 transition-all group reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-neutral-900 flex items-center justify-center text-brand-500 mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="workflow" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Automatización de Procesos</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed mb-6">
+                        Implementación de flujos de trabajo inteligentes utilizando n8n, Make y scripts personalizados que conectan tus Apps y bases de datos.
+                    </p>
+                    <ul class="text-xs text-neutral-300 space-y-2">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Generación de facturas y PDFs</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Integración con Telegram / WhatsApp</li>
+                    </ul>
+                </div>
+                <div class="p-8 rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-brand-500 transition-all group reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-neutral-900 flex items-center justify-center text-brand-500 mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="code" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Desarrollo Web & Portales</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed mb-6">
+                        Construcción de interfaces ultramodernas, paneles administrativos y portales de clientes rápidos, responsivos y seguros.
+                    </p>
+                    <ul class="text-xs text-neutral-300 space-y-2">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> HTML5, Tailwind CSS & JavaScript</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Dashboards analíticos</li>
+                    </ul>
+                </div>
+                <div class="p-8 rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-brand-500 transition-all group reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-neutral-900 flex items-center justify-center text-brand-500 mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="database" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Integración ERP / CRM</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed mb-6">
+                        Configuración y personalización de plataformas corporativas como Odoo e integración de Webhooks con servicios externos.
+                    </p>
+                    <ul class="text-xs text-neutral-300 space-y-2">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Control de inventarios</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Sincronización API REST</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- EQUIPO -->
+    <section id="equipo" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="text-brand-500 font-semibold text-sm tracking-widest uppercase">Mentes Creativas</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Nuestro Equipo Especializado</h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 rounded-2xl bg-neutral-900 border border-neutral-800 text-center reveal">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-brand-600 to-neutral-800 p-1 mb-4">
+                        <div class="w-full h-full bg-neutral-950 rounded-full flex items-center justify-center">
+                            <i data-lucide="terminal" class="w-10 h-10 text-brand-500"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Ingeniero Principal</h3>
+                    <p class="text-xs text-brand-500 font-medium mb-3">Lead System Architect</p>
+                    <p class="text-sm text-neutral-400">Especialista en flujos n8n, desarrollo frontend y arquitecturas de automatización.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-neutral-900 border border-neutral-800 text-center reveal">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-brand-600 to-neutral-800 p-1 mb-4">
+                        <div class="w-full h-full bg-neutral-950 rounded-full flex items-center justify-center">
+                            <i data-lucide="layout" class="w-10 h-10 text-brand-500"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Diseñador UI/UX</h3>
+                    <p class="text-xs text-brand-500 font-medium mb-3">Frontend Developer</p>
+                    <p class="text-sm text-neutral-400">Experto en la creación de interfaces interactivas, estéticas e intuitivas.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-neutral-900 border border-neutral-800 text-center reveal">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-brand-600 to-neutral-800 p-1 mb-4">
+                        <div class="w-full h-full bg-neutral-950 rounded-full flex items-center justify-center">
+                            <i data-lucide="server" class="w-10 h-10 text-brand-500"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Especialista Backend</h3>
+                    <p class="text-xs text-brand-500 font-medium mb-3">ERP & Integraciones</p>
+                    <p class="text-sm text-neutral-400">Encargado de la lógica de bases de datos, APIs y entornos empresariales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CONTACTO -->
+    <section id="contacto" class="py-24 bg-neutral-900/50 border-t border-neutral-800/50 relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12 reveal">
+                <span class="text-brand-500 font-semibold text-sm tracking-widest uppercase">Hablemos</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">¿Listo para optimizar tus procesos?</h2>
+                <p class="text-neutral-400 text-sm mt-2">Envíanos un mensaje y te responderemos en menos de 24 horas.</p>
+            </div>
+            <form id="contact-form" class="p-8 sm:p-10 rounded-2xl bg-neutral-950 border border-neutral-800 space-y-6 reveal">
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-neutral-400 mb-2">Nombre Completo</label>
+                        <input type="text" required id="form-name" placeholder="Tu nombre" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-neutral-400 mb-2">Correo Electrónico</label>
+                        <input type="email" required id="form-email" placeholder="tu@empresa.com" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-neutral-400 mb-2">Detalles del Proyecto</label>
+                    <textarea id="form-message" required rows="4" placeholder="Cuéntanos brevemente qué deseas automatizar o construir..." class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors resize-none"></textarea>
+                </div>
+                <button type="submit" id="form-btn" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-brand-600/30 flex items-center justify-center gap-2">
+                    <span id="btn-text">Enviar Mensaje</span>
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+                <div id="form-alert" class="hidden p-4 rounded-xl text-xs font-medium text-center"></div>
+            </form>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="py-12 border-t border-neutral-800 text-neutral-500 text-xs">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 bg-brand-600 rounded-md flex items-center justify-center text-white">
+                    <i data-lucide="zap" class="w-4 h-4"></i>
+                </div>
+                <span class="font-bold text-white text-sm">RedPulse Automation</span>
+            </div>
+
+            <p>© 2026 RedPulse Automation. Todos los derechos reservados.</p>
+
+            <div class="flex items-center gap-4">
+                <a href="#" class="hover:text-brand-500 transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-brand-500 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-brand-500 transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
