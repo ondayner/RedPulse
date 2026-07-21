@@ -1,35 +1,71 @@
-tailwind.config = {
-    darkMode: 'class',
-    theme: {
-        extend: {
-            colors: {
-                brand: {
-                    50: '#fff1f2',
-                    100: '#ffe4e6',
-                    500: '#f43f5e',
-                    600: '#e11d48',
-                    700: '#be123c',
-                    900: '#881337',
-                    glow: '#ff2a55'
-                }
-            }
-        }
-    }
-}
-
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Inicializar iconos de Lucide al cargar
+    if (window.lucide) {
         lucide.createIcons();
+    }
 
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+    // 2. Control del Menú Móvil
+    const menuToggle = document.getElementById('menu-toggle');
+    const navList = document.getElementById('nav-list');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+    if (menuToggle && navList) {
+        menuToggle.addEventListener('click', () => {
+            const isHidden = navList.classList.contains('hidden');
+            
+            if (isHidden) {
+                // ABRIR MENÚ
+                navList.classList.remove('hidden');
+                navList.classList.add('flex');
+                document.body.classList.add('overflow-hidden');
+                menuToggle.innerHTML = '<i data-lucide="x" class="w-7 h-7"></i>';
+            } else {
+                // CERRAR MENÚ
+                navList.classList.add('hidden');
+                navList.classList.remove('flex');
+                document.body.classList.remove('overflow-hidden');
+                menuToggle.innerHTML = '<i data-lucide="menu" class="w-7 h-7"></i>';
+            }
+            
+            if (window.lucide) {
+                lucide.createIcons();
+            }
         });
 
-        const observerOptions = {
-            threshold: 0.15
-        };
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768 && !navList.classList.contains('hidden')) {
+                    navList.classList.add('hidden');
+                    navList.classList.remove('flex');
+                    document.body.classList.remove('overflow-hidden');
+                    
+                    menuToggle.innerHTML = '<i data-lucide="menu" class="w-7 h-7"></i>';
+                    if (window.lucide) {
+                        lucide.createIcons();
+                    }
+                }
+            });
+        });
+    }
 
+    // 3. Efecto Header en Scroll
+    const header = document.getElementById('navbar-header');
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                header.classList.add('bg-sand-50/90', 'backdrop-blur-md', 'shadow-sm', 'py-3');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.remove('bg-sand-50/90', 'backdrop-blur-md', 'shadow-sm', 'py-3');
+                header.classList.add('py-4');
+            }
+        });
+    }
+
+    // 4. Animaciones al hacer Scroll (Intersection Observer)
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+    if (revealElements.length > 0) {
         const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -37,72 +73,97 @@ tailwind.config = {
                     observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
 
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Inicialización de iconos Lucide
-    if (window.lucide) {
-        lucide.createIcons();
+        revealElements.forEach(el => revealObserver.observe(el));
     }
 
-    const contactForm = document.getElementById('contact-form');
-    const formBtn = document.getElementById('form-btn');
-    const btnText = document.getElementById('btn-text');
-    const formAlert = document.getElementById('form-alert');
+    // 5. Calculadora Dinámica de Rutas
+    const serviceSelect = document.getElementById('calc-service');
+    const distanceInput = document.getElementById('calc-distance');
+    const distanceVal = document.getElementById('distance-val');
+    const calcResult = document.getElementById('calc-result');
 
-    // Correo receptor de RedPulse
-    const DESTINATION_EMAIL = 'redpulse@gmail.com';
+    const rates = {
+        ejecutivo: 8, 
+        personal: 5,
+        carga: 10
+    };
+
+    function updateCalculation() {
+        if (!distanceInput || !serviceSelect || !distanceVal || !calcResult) return;
+        const dist = parseInt(distanceInput.value) || 0;
+        const service = serviceSelect.value;
+        distanceVal.textContent = `${dist} km`;
+
+        const rate = rates[service] || 0;
+        const totalEstimated = dist * rate + 50;
+        calcResult.textContent = `$${totalEstimated} USD / mes`;
+    }
+
+    if (distanceInput && serviceSelect) {
+        distanceInput.addEventListener('input', updateCalculation);
+        serviceSelect.addEventListener('change', updateCalculation);
+    }
+
+    // 6. Formulario de Contacto (Mailto)
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const formToast = document.getElementById('form-toast');
+
+    const DESTINATION_EMAIL = 'nexum@gmail.com';
 
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            // 1. Captura de valores
-            const name = document.getElementById('form-name').value.trim();
-            const email = document.getElementById('form-email').value.trim();
-            const message = document.getElementById('form-message').value.trim();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
 
-            // 2. Estado de carga inicial
-            btnText.innerText = 'Procesando Envío...';
-            formBtn.disabled = true;
-            formBtn.classList.add('opacity-75', 'cursor-not-allowed');
+            submitBtn.disabled = true;
+            btnText.textContent = 'Procesando Envío Seguro...';
+            submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
 
             setTimeout(() => {
-                // 3. Preparar asunto y cuerpo formateado para mailto
-                const subject = encodeURIComponent(`[Proyecto RedPulse] - Solicitud de ${name}`);
-                const body = encodeURIComponent(
-                    `Hola Equipo RedPulse,\n\n` +
-                    `Se ha recibido una consulta desde el formulario web:\n\n` +
-                    `• Cliente: ${name}\n` +
-                    `• Correo: ${email}\n\n` +
-                    `• Detalles del Proyecto:\n${message}\n\n` +
-                    `---`
-                );
+                const subject = `[Nueva Alianza Logística] - ${name}`;
+                const body = 
+`Hola Equipo Nexum,
 
-                // 4. Disparar el gestor de correo del usuario
-                window.location.href = `mailto:${DESTINATION_EMAIL}?subject=${subject}&body=${body}`;
+Se ha recibido un nuevo requerimiento a través del sitio web:
 
-                // 5. Alerta de éxito formateada al estilo RedPulse (Modo Oscuro)
-                formAlert.classList.remove('hidden', 'bg-red-900/40', 'text-red-400');
-                formAlert.classList.add('bg-emerald-950', 'text-emerald-400', 'border', 'border-emerald-800', 'block');
-                formAlert.innerHTML = `✨ <strong>¡Gracias, ${name}!</strong> Redirigiendo a tu app de correo para enviar a <u>${DESTINATION_EMAIL}</u>.`;
+• Cliente/Empresa: ${name}
+• Correo de contacto: ${email}
 
-                // 6. Resetear entradas del formulario
+• Requerimiento:
+${message}
+
+---
+Mensaje enviado desde el formulario web.`;
+
+                const mailtoUrl = `mailto:${DESTINATION_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                window.location.href = mailtoUrl;
+
+                submitBtn.disabled = false;
+                btnText.textContent = 'Abriendo App de Correo...';
+                submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
+                submitBtn.classList.replace('bg-sand-900', 'bg-emerald-800');
+
+                formToast.classList.remove('hidden', 'bg-red-100', 'text-red-800');
+                formToast.classList.add('bg-sand-200', 'text-sand-900', 'block');
+                formToast.innerHTML = `✨ <strong>¡Gracias, ${name}!</strong> Se ha preparado el correo para <u>${DESTINATION_EMAIL}</u>. Por favor confirma el envío en tu aplicación de correo.`;
+
                 contactForm.reset();
 
-                // 7. Restauración del botón tras 5 segundos
                 setTimeout(() => {
-                    btnText.innerText = 'Enviar Mensaje';
-                    formBtn.disabled = false;
-                    formBtn.classList.remove('opacity-75', 'cursor-not-allowed');
-                    formAlert.classList.add('hidden');
-
-                    if (window.lucide) {
-                        lucide.createIcons();
-                    }
-                }, 5000);
+                    btnText.textContent = 'Enviar Mensaje Directo';
+                    submitBtn.classList.replace('bg-emerald-800', 'bg-sand-900');
+                    formToast.classList.add('hidden');
+                }, 6000);
 
             }, 1000);
         });
