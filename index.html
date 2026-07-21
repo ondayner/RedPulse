@@ -1,387 +1,334 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUM — Corporate Logistics & Fleet</title>
-
-    <link rel="icon" href="img/icono.svg">
-
+    <title>RedPulse Automation | Soluciones de Software & Automatización</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        sand: {
-                            50: '#F9F7F4',
-                            100: '#F3EFE9',
-                            200: '#E7DFD4',
-                            500: '#D4B38A',
-                            600: '#8C6B52',
-                            800: '#4A3729',
-                            900: '#2A211B',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="icon" href="img/logo.svg">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-sand-50 text-sand-900 font-sans antialiased selection:bg-sand-500 selection:text-white">
-    <!-- HEADER / NAVIGATION -->
-    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-sand-50 border-b border-sand-200/60" id="navbar-header">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between relative z-50">
-            <a href="#" class="flex items-center gap-3 group relative z-50">
-                <div class="w-10 h-10 rounded-xl bg-sand-900 flex items-center justify-center shadow-lg group-hover:bg-sand-600 transition-colors duration-300">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 17L10 11L14 15L20 9" stroke="#F9F7F4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <circle cx="20" cy="9" r="2" fill="#D4B38A" />
-                        <path d="M4 7H9M15 17H20" stroke="#D4B38A" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-brand-600 selection:text-white overflow-x-hidden">
+    <header class="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="relative w-10 h-10 bg-gradient-to-br from-brand-600 to-neutral-900 rounded-xl flex items-center justify-center border border-brand-500/30 group-hover:border-brand-500 transition-all red-glow">
+                    <img src="img/logo.svg" alt="">
+                    <span class="absolute -top-1 -right-1 w-3 h-3 bg-brand-500 rounded-full animate-ping"></span>
+                    <span class="absolute -top-1 -right-1 w-3 h-3 bg-brand-500 rounded-full"></span>
                 </div>
-                <div class="flex flex-col">
-                    <span class="font-bold tracking-widest text-lg uppercase text-sand-900 group-hover:text-sand-600 transition-colors">NEXUM</span>
-                    <span class="text-[9px] tracking-[0.2em] text-sand-600 font-semibold uppercase -mt-1">Corporate Mobility</span>
-                </div>
+                <span class="text-xl font-extrabold tracking-wider bg-gradient-to-r from-white via-neutral-200 to-brand-500 bg-clip-text text-transparent">
+                    REDPULSE
+                </span>
             </a>
-            <nav id="main-nav">
-                <button id="menu-toggle" aria-label="Abrir Menú" class="md:hidden text-sand-900 p-2 focus:outline-none relative z-50">
-                    <i data-lucide="menu" id="menu-icon" class="w-7 h-7"></i>
-                </button>
-                <ul id="nav-list" class="
-                    hidden md:flex flex-col md:flex-row items-center gap-8
-                    fixed md:static inset-0 w-full h-screen md:h-auto
-                    bg-white md:bg-transparent
-                    justify-center md:justify-end text-center md:text-left transition-all duration-300 z-40 pt-20 md:pt-0
-                ">
-                    <li class="w-full md:w-auto">
-                        <a href="#quienes-somos" class="nav-link block text-lg md:text-sm font-medium text-sand-900 md:text-sand-800 hover:text-sand-600 transition-colors py-2">Quiénes Somos</a>
+            <nav aria-label="Navegación principal">
+                <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-400">
+                    <li>
+                        <a href="#nosotros" class="hover:text-brand-500 transition-colors">Quiénes Somos</a>
                     </li>
-                    <li class="w-full md:w-auto">
-                        <a href="#beneficios" class="nav-link block text-lg md:text-sm font-medium text-sand-900 md:text-sand-800 hover:text-sand-600 transition-colors py-2">Beneficios</a>
+                    <li>
+                        <a href="#beneficios" class="hover:text-brand-500 transition-colors">Beneficios</a>
                     </li>
-                    <li class="w-full md:w-auto">
-                        <a href="#ofrecemos" class="nav-link block text-lg md:text-sm font-medium text-sand-900 md:text-sand-800 hover:text-sand-600 transition-colors py-2">Qué Ofrecemos</a>
+                    <li>
+                        <a href="#servicios" class="hover:text-brand-500 transition-colors">Qué Ofrecemos</a>
                     </li>
-                    <li class="w-full md:w-auto">
-                        <a href="#simulador" class="nav-link block text-lg md:text-sm font-medium text-sand-900 md:text-sand-800 hover:text-sand-600 transition-colors py-2">Simulador 360°</a>
-                    </li>
-                    <li class="w-full md:w-auto">
-                        <a href="#equipo" class="nav-link block text-lg md:text-sm font-medium text-sand-900 md:text-sand-800 hover:text-sand-600 transition-colors py-2">Equipo</a>
-                    </li>
-                    <li class="w-full md:w-auto mt-4 md:mt-0">
-                        <a href="#contacto" class="nav-link inline-flex items-center gap-2 bg-sand-900 text-sand-50 px-6 py-3 md:py-2.5 rounded-full font-medium text-sm hover:bg-sand-600 transition-all shadow-md">
-                            <span>Contacto</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                        </a>
+                    <li>
+                        <a href="#equipo" class="hover:text-brand-500 transition-colors">Equipo</a>
                     </li>
                 </ul>
             </nav>
+            <a href="#contacto" class="hidden md:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all shadow-lg hover:shadow-brand-600/30">
+                <span>Iniciar Proyecto</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <button id="mobile-menu-btn" aria-label="Abrir menú de navegación" class="md:hidden text-neutral-400 hover:text-white focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral-900 border-b border-neutral-800 px-6 py-4">
+            <ul class="flex flex-col gap-4 text-sm font-medium">
+                <li>
+                    <a href="#nosotros" class="block hover:text-brand-500 transition-colors">Quiénes Somos</a>
+                </li>
+                <li>
+                    <a href="#beneficios" class="block hover:text-brand-500 transition-colors">Beneficios</a>
+                </li>
+                <li>
+                    <a href="#servicios" class="block hover:text-brand-500 transition-colors">Qué Ofrecemos</a>
+                </li>
+                <li>
+                    <a href="#equipo" class="block hover:text-brand-500 transition-colors">Equipo</a>
+                </li>
+                <li>
+                    <a href="#contacto" class="block bg-brand-600 hover:bg-brand-700 text-white text-center py-2.5 rounded-lg transition-colors">Iniciar Proyecto</a>
+                </li>
+            </ul>
         </div>
     </header>
     <!-- HERO SECTION -->
-    <section class="min-h-screen pt-32 pb-20 px-6 flex items-center justify-center relative overflow-hidden">
-        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-sand-200/50 rounded-full blur-3xl -z-10"></div>
-        <div class="absolute bottom-10 right-0 w-80 h-80 bg-sand-500/10 rounded-full blur-3xl -z-10"></div>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-12 items-center">
-            <div class="md:col-span-7 space-y-6 reveal-left">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sand-200/70 border border-sand-300 text-sand-800 text-xs font-semibold uppercase tracking-wider">
-                    <span class="w-2 h-2 rounded-full bg-sand-600 animate-pulse"></span>
-                    Logística Corporativa Inteligente
+    <section class="relative pt-36 pb-24 md:pt-48 md:pb-32 overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-900/30 border border-brand-500/30 text-brand-500 text-xs font-semibold uppercase tracking-wider mb-8 reveal">
+                <i data-lucide="cpu" class="w-4 h-4"></i>
+                <span>Automatización con Inteligencia de Flujos</span>
+            </div>
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white mb-6 leading-tight reveal">
+                Escala tu empresa al <br class="hidden sm:inline" />
+                <span class="bg-gradient-to-r from-brand-500 via-rose-500 to-red-400 bg-clip-text text-transparent text-glow">
+                    siguiente nivel tecnológico
+                </span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-neutral-400 text-base sm:text-lg mb-10 leading-relaxed reveal">
+                Diseñamos software robusto, arquitecturas ERP e integraciones automatizadas sin fricción que eliminan el trabajo repetitivo y multiplican tu eficiencia operativa.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
+                <a href="#contacto" class="w-full sm:w-auto bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-brand-600/40 flex items-center justify-center gap-2">
+                    <span>Agendar Consulta Gratis</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-200 px-8 py-4 rounded-xl font-semibold transition-all flex items-center justify-center gap-2">
+                    <span>Ver Servicios</span>
+                </a>
+            </div>
+            <div class="mt-16 max-w-4xl mx-auto rounded-2xl bg-neutral-900/90 border border-neutral-800/80 p-4 text-left shadow-2xl red-glow-lg reveal">
+                <div class="flex items-center justify-between pb-3 border-b border-neutral-800 px-2">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                    </div>
+                    <span class="text-xs text-neutral-500 font-mono">redpulse-core ~ automation.js</span>
                 </div>
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-sand-900 leading-[1.1]">
-                    Estructura en movimiento. <br>
-                    <span class="text-sand-600 font-light italic">Eficiencia sin pausas.</span>
-                </h1>
-                <p class="text-sand-800/80 text-lg max-w-xl font-normal leading-relaxed">
-                    Diseñamos y coordinamos la cadena de transporte de personal y logística crítica para empresas exigentes. Seguridad puntual en cada milla.
-                </p>
-                <div class="pt-4 flex flex-wrap gap-4 items-center">
-                    <a href="#contacto" class="bg-sand-800 hover:bg-sand-900 text-sand-50 px-8 py-4 rounded-xl font-medium text-sm transition-all shadow-xl hover:-translate-y-0.5">
-                        Iniciar Cotización Corporativa
-                    </a>
-                    <a href="#simulador" class="border border-sand-300 hover:bg-sand-200/50 text-sand-900 px-6 py-4 rounded-xl font-medium text-sm transition-all flex items-center gap-2">
-                        <span>Estimar Ruta</span>
-                        <i data-lucide="calculator" class="w-4 h-4 text-sand-600"></i>
-                    </a>
+                <div class="p-4 font-mono text-xs sm:text-sm text-neutral-300 space-y-2 overflow-x-auto">
+                    <p class="text-neutral-500">// Desplegando flujo automatizado de procesos</p>
+                    <p><span class="text-brand-500">const</span> engine = <span class="text-brand-500">new</span> RedPulseEngine({ mode: <span class="text-emerald-400">'high-performance'</span> });</p>
+                    <p><span class="text-brand-500">await</span> engine.connectServices([<span class="text-emerald-400">'Odoo_ERP'</span>, <span class="text-emerald-400">'Webhooks_API'</span>, <span class="text-emerald-400">'AI_Agents'</span>]);</p>
+                    <p class="text-emerald-400">✔ Estado: Sistema funcionando al 100% de eficiencia.</p>
                 </div>
             </div>
-            <div class="md:col-span-5 relative reveal-right">
-                <div class="relative bg-sand-200/60 rounded-3xl p-4 border border-sand-300/60 shadow-2xl backdrop-blur-sm">
-                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" 
-                         alt="Logística Corporativa Nexum" 
-                         class="rounded-2xl object-cover w-full h-[420px]">
-                    <div class="absolute -bottom-6 -left-6 bg-sand-50/95 p-4 rounded-2xl shadow-xl border border-sand-200 flex items-center gap-4">
-                        <div class="p-3 bg-sand-600/10 rounded-xl text-sand-600">
-                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+        </div>
+    </section>
+    <!-- QUIÉNES SOMOS -->
+    <section id="nosotros" class="py-24 bg-neutral-900/50 border-y border-neutral-800/50 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 reveal">
+                    <div class="inline-flex items-center gap-2 text-brand-500 font-semibold text-sm tracking-widest uppercase">
+                        <i data-lucide="shield-check" class="w-4 h-4"></i>
+                        <span>Quiénes Somos</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white leading-tight">
+                        Transformamos la complejidad técnica en motores de crecimiento.
+                    </h2>
+                    <p class="text-neutral-400 leading-relaxed">
+                        En **RedPulse Automation** unimos la ingeniería de software moderna con la automatización inteligente. Nos especializamos en resolver cuellos de botella operativos mediante la construcción de plataformas a medida, integraciones de sistemas y optimización continua.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl bg-neutral-950 border border-neutral-800">
+                            <h3 class="text-3xl font-black text-brand-500 text-glow">+98%</h3>
+                            <p class="text-xs text-neutral-400 mt-1">Eficiencia Operativa</p>
                         </div>
+                        <div class="p-4 rounded-xl bg-neutral-950 border border-neutral-800">
+                            <h3 class="text-3xl font-black text-brand-500 text-glow">24/7</h3>
+                            <p class="text-xs text-neutral-400 mt-1">Procesos en Autopilot</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative reveal">
+                    <div class="aspect-video rounded-2xl bg-gradient-to-tr from-brand-900/40 via-neutral-900 to-neutral-950 border border-brand-500/20 p-8 flex flex-col justify-between relative overflow-hidden group">
+                        <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-brand-600/20 rounded-full blur-3xl"></div>
+                        <i data-lucide="layers" class="w-12 h-12 text-brand-500 mb-4"></i>
                         <div>
-                            <p class="text-xs text-sand-600 font-medium">Garantía Operativa</p>
-                            <p class="text-sm font-bold text-sand-900">99.8% Disponibilidad</p>
+                            <h4 class="text-xl font-bold text-white mb-2">Ecosistema Integrado</h4>
+                            <p class="text-sm text-neutral-400">Conectamos tus herramientas favoritas para que la información fluya sin intervención manual.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- SECCIÓN: QUIÉNES SOMOS -->
-    <section id="quienes-somos" class="py-28 px-6 bg-sand-100/60 border-y border-sand-200/80">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div class="reveal">
-                <p class="text-sand-600 font-semibold text-xs tracking-widest uppercase mb-2">Sobre Nexum</p>
-                <h2 class="text-3xl md:text-4xl font-bold text-sand-900 mb-6">Redefiniendo el transporte empresarial con elegancia y precisión.</h2>
-                <p class="text-sand-800/80 leading-relaxed mb-6">
-                    Nacimos para resolver la complejidad operativa de los desplazamientos ejecutivos y la distribución de materiales clave. Combinamos la calidez de un trato personalizado con tecnología analítica para garantizar que tu operación nunca se detenga.
-                </p>
-                <div class="grid grid-cols-2 gap-6 pt-4 border-t border-sand-200">
-                    <div>
-                        <p class="text-3xl font-bold text-sand-800">+10 Años</p>
-                        <p class="text-xs text-sand-600 mt-1">Liderando movilidad corporativa</p>
-                    </div>
-                    <div>
-                        <p class="text-3xl font-bold text-sand-800">50k+</p>
-                        <p class="text-xs text-sand-600 mt-1">Rutas completadas con éxito</p>
-                    </div>
-                </div>
-            </div>
-            <div class="grid grid-cols-2 gap-4 reveal">
-                <div class="bg-sand-50 p-6 rounded-2xl border border-sand-200 shadow-sm space-y-3">
-                    <i data-lucide="target" class="w-8 h-8 text-sand-600"></i>
-                    <h3 class="font-bold text-sand-900">Misión</h3>
-                    <p class="text-xs text-sand-800/70 leading-relaxed">Maximizar la rentabilidad del tiempo corporativo optimizando traslados y logística interna.</p>
-                </div>
-                <div class="bg-sand-50 p-6 rounded-2xl border border-sand-200 shadow-sm space-y-3 translate-y-6">
-                    <i data-lucide="eye" class="w-8 h-8 text-sand-600"></i>
-                    <h3 class="font-bold text-sand-900">Visión</h3>
-                    <p class="text-xs text-sand-800/70 leading-relaxed">Ser la red de movilidad corporativa más confiable y sostenible de la región.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- SECCIÓN: BENEFICIOS -->
-    <section id="beneficios" class="py-28 px-6">
-        <div class="max-w-6xl mx-auto">
+    <!-- BENEFICIOS -->
+    <section id="beneficios" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-                <p class="text-sand-600 font-semibold text-xs tracking-widest uppercase mb-2">Por qué elegirnos</p>
-                <h2 class="text-3xl md:text-4xl font-bold text-sand-900">Beneficios diseñados para la alta gerencia</h2>
+                <span class="text-brand-500 font-semibold text-sm tracking-widest uppercase">Ventajas Clave</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">¿Por qué automatizar con nosotros?</h2>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-sand-100/40 p-8 rounded-2xl border border-sand-200/80 hover:bg-sand-50 hover:border-sand-500/50 hover:shadow-xl transition-all duration-300 reveal">
-                    <div class="w-12 h-12 bg-sand-200 rounded-xl flex items-center justify-center text-sand-800 mb-6">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-brand-500/50 transition-all hover:-translate-y-1 reveal">
+                    <div class="w-12 h-12 rounded-xl bg-brand-900/30 border border-brand-500/30 flex items-center justify-center text-brand-500 mb-6">
                         <i data-lucide="clock" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-sand-900 mb-3">Puntualidad Milimétrica</h3>
-                    <p class="text-sand-800/70 text-sm leading-relaxed">Monitoreo con IA predictiva de tráfico para garantizar arribos a tiempo en todas tus reuniones o turnos operativos.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">Ahorro de Tiempo</h3>
+                    <p class="text-sm text-neutral-400">Reducimos hasta un 80% las horas dedicadas a tareas administrativas e ingreso de datos manual.</p>
                 </div>
-                <div class="bg-sand-100/40 p-8 rounded-2xl border border-sand-200/80 hover:bg-sand-50 hover:border-sand-500/50 hover:shadow-xl transition-all duration-300 reveal">
-                    <div class="w-12 h-12 bg-sand-200 rounded-xl flex items-center justify-center text-sand-800 mb-6">
-                        <i data-lucide="cpu" class="w-6 h-6"></i>
+                <div class="p-6 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-brand-500/50 transition-all hover:-translate-y-1 reveal">
+                    <div class="w-12 h-12 rounded-xl bg-brand-900/30 border border-brand-500/30 flex items-center justify-center text-brand-500 mb-6">
+                        <i data-lucide="check-circle-2" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-sand-900 mb-3">Telemetría en Tiempo Real</h3>
-                    <p class="text-sand-800/70 text-sm leading-relaxed">Acceso a dashboard corporativo con estado de rutas, ubicación GPS activa y métricas de consumo en tiempo real.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">Cero Errores Humanos</h3>
+                    <p class="text-sm text-neutral-400">Garantizamos precisión total en la transferencia y procesamiento de tu información crítica.</p>
                 </div>
-                <div class="bg-sand-100/40 p-8 rounded-2xl border border-sand-200/80 hover:bg-sand-50 hover:border-sand-500/50 hover:shadow-xl transition-all duration-300 reveal">
-                    <div class="w-12 h-12 bg-sand-200 rounded-xl flex items-center justify-center text-sand-800 mb-6">
-                        <i data-lucide="sparkles" class="w-6 h-6"></i>
+                <div class="p-6 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-brand-500/50 transition-all hover:-translate-y-1 reveal">
+                    <div class="w-12 h-12 rounded-xl bg-brand-900/30 border border-brand-500/30 flex items-center justify-center text-brand-500 mb-6">
+                        <i data-lucide="trending-up" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-sand-900 mb-3">Unidades de Alto Confort</h3>
-                    <p class="text-sand-800/70 text-sm leading-relaxed">Flota ejecutiva moderna adaptada con conectividad Wi-Fi, climatización personalizada y máximo nivel de seguridad.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">Escalabilidad Directa</h3>
+                    <p class="text-sm text-neutral-400">Tus operaciones crecen en volumen sin necesidad de multiplicar proporcionalmente tu personal.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-brand-500/50 transition-all hover:-translate-y-1 reveal">
+                    <div class="w-12 h-12 rounded-xl bg-brand-900/30 border border-brand-500/30 flex items-center justify-center text-brand-500 mb-6">
+                        <i data-lucide="lock" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Seguridad & Control</h3>
+                    <p class="text-sm text-neutral-400">Estructuras encriptadas y trazabilidad completa de cada evento procesado en el sistema.</p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- SECCIÓN: QUÉ OFRECEMOS -->
-    <section id="ofrecemos" class="py-28 px-6 bg-sand-900 text-sand-50 relative overflow-hidden">
-        <div class="max-w-6xl mx-auto relative z-10">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 reveal">
-                <div>
-                    <p class="text-sand-500 font-semibold text-xs tracking-widest uppercase mb-2">Servicios Integrales</p>
-                    <h2 class="text-3xl md:text-4xl font-bold">Soluciones a la medida de tu empresa</h2>
-                </div>
-                <p class="text-sand-200/70 text-sm max-w-md mt-4 md:mt-0">Adaptamos nuestra infraestructura logística al tamaño y requerimientos específicos de tu negocio.</p>
+    <!-- QUÉ OFRECEMOS -->
+    <section id="servicios" class="py-24 bg-neutral-900/50 border-t border-neutral-800/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="text-brand-500 font-semibold text-sm tracking-widest uppercase">Nuestros Servicios</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Soluciones de Software a Medida</h2>
             </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="p-8 rounded-2xl bg-sand-800/50 border border-sand-800 hover:border-sand-500/50 transition-all reveal">
-                    <i data-lucide="users" class="w-10 h-10 text-sand-500 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Transporte de Personal Corporativo</h3>
-                    <p class="text-sand-200/70 text-sm leading-relaxed mb-4">Rutas planificadas para colaboradores, directivos e invitados especiales con horarios inflexibles y óptimo confort.</p>
-                    <span class="text-xs text-sand-500 font-semibold uppercase tracking-wider">Flotas Sedan / Vans / Executive Minibus</span>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-brand-500 transition-all group reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-neutral-900 flex items-center justify-center text-brand-500 mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="workflow" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Automatización de Procesos</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed mb-6">
+                        Implementación de flujos de trabajo inteligentes utilizando n8n, Make y scripts personalizados que conectan tus Apps y bases de datos.
+                    </p>
+                    <ul class="text-xs text-neutral-300 space-y-2">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Generación de facturas y PDFs</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Integración con Telegram / WhatsApp</li>
+                    </ul>
                 </div>
-                <div class="p-8 rounded-2xl bg-sand-800/50 border border-sand-800 hover:border-sand-500/50 transition-all reveal">
-                    <i data-lucide="package-check" class="w-10 h-10 text-sand-500 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Logística & Envíos Críticos (Last-Mile)</h3>
-                    <p class="text-sand-200/70 text-sm leading-relaxed mb-4">Manejo y custodia de documentos sensibles, equipamiento valioso o insumos vitales entre sedes empresariales.</p>
-                    <span class="text-xs text-sand-500 font-semibold uppercase tracking-wider">Monitoreo GPS dedicado</span>
+                <div class="p-8 rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-brand-500 transition-all group reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-neutral-900 flex items-center justify-center text-brand-500 mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="code" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Desarrollo Web & Portales</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed mb-6">
+                        Construcción de interfaces ultramodernas, paneles administrativos y portales de clientes rápidos, responsivos y seguros.
+                    </p>
+                    <ul class="text-xs text-neutral-300 space-y-2">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> HTML5, Tailwind CSS & JavaScript</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Dashboards analíticos</li>
+                    </ul>
+                </div>
+                <div class="p-8 rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-brand-500 transition-all group reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-neutral-900 flex items-center justify-center text-brand-500 mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="database" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Integración ERP / CRM</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed mb-6">
+                        Configuración y personalización de plataformas corporativas como Odoo e integración de Webhooks con servicios externos.
+                    </p>
+                    <ul class="text-xs text-neutral-300 space-y-2">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Control de inventarios</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Sincronización API REST</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-    <!-- SECCIÓN ESPECIAL EXCLUSIVA: SIMULADOR INTERACTIVO DE COSTOS Y TIEMPO DE RUTA -->
-    <section id="simulador" class="py-28 px-6 bg-sand-100/40">
-        <div class="max-w-4xl mx-auto bg-sand-50 p-8 md:p-12 rounded-3xl border border-sand-300 shadow-xl reveal">
-            <div class="text-center mb-8">
-                <span class="px-3 py-1 bg-sand-200 text-sand-800 text-xs font-semibold rounded-full uppercase tracking-wider">Herramienta Interactiva</span>
-                <h2 class="text-3xl font-bold text-sand-900 mt-3">Calculadora Express de Ruta Corporativa</h2>
-                <p class="text-sand-800/70 text-sm mt-2">Estima al instante los tiempos y costos operativos para tu empresa.</p>
+    <!-- EQUIPO -->
+    <section id="equipo" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="text-brand-500 font-semibold text-sm tracking-widest uppercase">Mentes Creativas</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Nuestro Equipo Especializado</h2>
             </div>
-            <form id="calculator-form" class="space-y-6">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-bold text-sand-800 uppercase tracking-wider mb-2">Tipo de Servicio</label>
-                        <select id="calc-service" class="w-full bg-sand-100 border border-sand-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-sand-600 transition-colors">
-                            <option value="ejecutivo">Transporte Ejecutivo (VIP)</option>
-                            <option value="personal">Traslado Masivo de Personal</option>
-                            <option value="carga">Logística Crítica / Materiales</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-sand-800 uppercase tracking-wider mb-2">Distancia Estimada (Km/Día)</label>
-                        <input type="range" id="calc-distance" min="10" max="300" value="50" class="w-full accent-sand-600 cursor-pointer">
-                        <div class="flex justify-between text-xs text-sand-600 font-medium mt-1">
-                            <span>10 km</span>
-                            <span id="distance-val" class="font-bold text-sand-900">50 km</span>
-                            <span>300 km</span>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 rounded-2xl bg-neutral-900 border border-neutral-800 text-center reveal">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-brand-600 to-neutral-800 p-1 mb-4">
+                        <div class="w-full h-full bg-neutral-950 rounded-full flex items-center justify-center">
+                            <i data-lucide="terminal" class="w-10 h-10 text-brand-500"></i>
                         </div>
                     </div>
+                    <h3 class="text-lg font-bold text-white">Ingeniero Principal</h3>
+                    <p class="text-xs text-brand-500 font-medium mb-3">Lead System Architect</p>
+                    <p class="text-sm text-neutral-400">Especialista en flujos n8n, desarrollo frontend y arquitecturas de automatización.</p>
                 </div>
-                <!-- Resultado dinámico generado por JS -->
-                <div class="bg-sand-900 text-sand-50 p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4 mt-6">
-                    <div>
-                        <p class="text-xs text-sand-500 font-semibold uppercase">Estimado Mensual Sugerido</p>
-                        <p class="text-3xl font-bold text-sand-50" id="calc-result">$450 USD / mes</p>
+                <div class="p-6 rounded-2xl bg-neutral-900 border border-neutral-800 text-center reveal">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-brand-600 to-neutral-800 p-1 mb-4">
+                        <div class="w-full h-full bg-neutral-950 rounded-full flex items-center justify-center">
+                            <i data-lucide="layout" class="w-10 h-10 text-brand-500"></i>
+                        </div>
                     </div>
-                    <a href="#contacto" class="bg-sand-500 hover:bg-sand-600 text-sand-900 font-semibold px-6 py-3 rounded-xl text-sm transition-colors w-full md:w-auto text-center">
-                        Solicitar Esta Cotización
-                    </a>
+                    <h3 class="text-lg font-bold text-white">Diseñador UI/UX</h3>
+                    <p class="text-xs text-brand-500 font-medium mb-3">Frontend Developer</p>
+                    <p class="text-sm text-neutral-400">Experto en la creación de interfaces interactivas, estéticas e intuitivas.</p>
                 </div>
-            </form>
-        </div>
-    </section>
-    <!-- SECCIÓN: EQUIPO -->
-    <section id="equipo" class="py-28 px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-                <p class="text-sand-600 font-semibold text-xs tracking-widest uppercase mb-2">Liderazgo & Operaciones</p>
-                <h2 class="text-3xl md:text-4xl font-bold text-sand-900">El equipo detrás del volante estratégico</h2>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-sand-100/30 p-8 rounded-2xl border border-sand-200/80 text-center hover:border-sand-500/50 hover:shadow-xl transition-all duration-300 reveal">
-                    <!-- Icono de Perfil Ejecutivo -->
-                    <div class="w-20 h-20 rounded-2xl bg-sand-200/80 border border-sand-300/80 flex items-center justify-center mx-auto mb-6 text-sand-800 shadow-sm">
-                        <i data-lucide="user-check" class="w-10 h-10 text-sand-600"></i>
+                <div class="p-6 rounded-2xl bg-neutral-900 border border-neutral-800 text-center reveal">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-brand-600 to-neutral-800 p-1 mb-4">
+                        <div class="w-full h-full bg-neutral-950 rounded-full flex items-center justify-center">
+                            <i data-lucide="server" class="w-10 h-10 text-brand-500"></i>
+                        </div>
                     </div>
-                    <h3 class="font-bold text-sand-900 text-lg">Guillermo Benítez</h3>
-                    <p class="text-xs text-sand-600 font-semibold uppercase tracking-wider mb-3">Director de Estrategia & Movilidad</p>
-                    <p class="text-xs text-sand-800/70 leading-relaxed">Especialista en optimización de rutas masivas y eficiencia logística empresarial con visión global.</p>
-                </div>
-                <div class="bg-sand-100/30 p-8 rounded-2xl border border-sand-200/80 text-center hover:border-sand-500/50 hover:shadow-xl transition-all duration-300 reveal">
-                    <div class="w-20 h-20 rounded-2xl bg-sand-200/80 border border-sand-300/80 flex items-center justify-center mx-auto mb-6 text-sand-800 shadow-sm">
-                        <i data-lucide="shield-check" class="w-10 h-10 text-sand-600"></i>
-                    </div>
-                    <h3 class="font-bold text-sand-900 text-lg">Mariana Colmenares</h3>
-                    <p class="text-xs text-sand-600 font-semibold uppercase tracking-wider mb-3">Directora de Operaciones & Telemetría</p>
-                    <p class="text-xs text-sand-800/70 leading-relaxed">Líder en monitoreo en tiempo real, seguridad vehicular y automatización de flotas corporativas.</p>
-                </div>
-                <div class="bg-sand-100/30 p-8 rounded-2xl border border-sand-200/80 text-center hover:border-sand-500/50 hover:shadow-xl transition-all duration-300 reveal">
-                    <div class="w-20 h-20 rounded-2xl bg-sand-200/80 border border-sand-300/80 flex items-center justify-center mx-auto mb-6 text-sand-800 shadow-sm">
-                        <i data-lucide="briefcase" class="w-10 h-10 text-sand-600"></i>
-                    </div>
-                    <h3 class="font-bold text-sand-900 text-lg">Ignacio Rondón</h3>
-                    <p class="text-xs text-sand-600 font-semibold uppercase tracking-wider mb-3">Gerente de Cuentas B2B</p>
-                    <p class="text-xs text-sand-800/70 leading-relaxed">Encargado de diseñar planes de transporte personalizados e integraciones clave para grandes cuentas.</p>
+                    <h3 class="text-lg font-bold text-white">Especialista Backend</h3>
+                    <p class="text-xs text-brand-500 font-medium mb-3">ERP & Integraciones</p>
+                    <p class="text-sm text-neutral-400">Encargado de la lógica de bases de datos, APIs y entornos empresariales.</p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- SECCIÓN: CONTÁCTANOS (CON TRUCO JS DE ENVÍO Y NOTIFICACIÓN DINÁMICA) -->
-    <section id="contacto" class="py-28 px-6 bg-sand-200/40 border-t border-sand-200">
-        <div class="max-w-4xl mx-auto">
+    <!-- CONTACTO -->
+    <section id="contacto" class="py-24 bg-neutral-900/50 border-t border-neutral-800/50 relative">
+        <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-12 reveal">
-                <p class="text-sand-600 font-semibold text-xs tracking-widest uppercase mb-2">Contacto Directo</p>
-                <h2 class="text-3xl font-bold text-sand-900">Iniciemos una alianza logística</h2>
-                <p class="text-sand-800/70 text-sm mt-2">Déjanos tus datos y un asesor se comunicará en menos de 15 minutos.</p>
+                <span class="text-brand-500 font-semibold text-sm tracking-widest uppercase">Hablemos</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">¿Listo para optimizar tus procesos?</h2>
+                <p class="text-neutral-400 text-sm mt-2">Envíanos un mensaje y te responderemos en menos de 24 horas.</p>
             </div>
-            <form id="contact-form" class="space-y-6 bg-sand-50 p-8 md:p-10 rounded-3xl border border-sand-300 shadow-md reveal">
-                <div class="grid md:grid-cols-2 gap-6">
+            <form id="contact-form" class="p-8 sm:p-10 rounded-2xl bg-neutral-950 border border-neutral-800 space-y-6 reveal">
+                <div class="grid sm:grid-cols-2 gap-6">
                     <div>
-                        <label for="name" class="block text-xs font-bold text-sand-800 uppercase tracking-wider mb-2">Nombre Completo / Empresa</label>
-                        <input type="text" id="name" name="name" required placeholder="Ej. Corporación Alpha" class="w-full bg-sand-100 border border-sand-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-sand-600 transition-all">
+                        <label for="form-name" class="block text-xs font-semibold uppercase text-neutral-400 mb-2">Nombre Completo</label>
+                        <input type="text" required id="form-name" placeholder="Tu nombre" autocomplete="name" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors">
                     </div>
                     <div>
-                        <label for="email" class="block text-xs font-bold text-sand-800 uppercase tracking-wider mb-2">Correo Corporativo</label>
-                        <input type="email" id="email" name="email" required placeholder="gerencia@empresa.com" class="w-full bg-sand-100 border border-sand-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-sand-600 transition-all">
+                        <label for="form-email" class="block text-xs font-semibold uppercase text-neutral-400 mb-2">Correo Electrónico</label>
+                        <input type="email" required id="form-email" placeholder="tu@empresa.com" autocomplete="email" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors">
                     </div>
                 </div>
                 <div>
-                    <label for="message" class="block text-xs font-bold text-sand-800 uppercase tracking-wider mb-2">Detalles del Requerimiento</label>
-                    <textarea id="message" name="message" rows="4" required placeholder="Indica rutas, cantidad de personal o necesidades de transporte..." class="w-full bg-sand-100 border border-sand-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-sand-600 transition-all"></textarea>
+                    <label for="form-message" class="block text-xs font-semibold uppercase text-neutral-400 mb-2">Detalles del Proyecto</label>
+                    <textarea id="form-message" required rows="4" placeholder="Cuéntanos brevemente qué deseas automatizar o construir..." class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors resize-none"></textarea>
                 </div>
-                <button type="submit" id="submit-btn" class="w-full bg-sand-900 hover:bg-sand-800 text-sand-50 font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-3 shadow-lg cursor-pointer">
-                    <span id="btn-text">Enviar Mensaje Directo</span>
-                    <i data-lucide="send" id="btn-icon" class="w-4 h-4"></i>
+                <button type="submit" id="form-btn" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-brand-600/30 flex items-center justify-center gap-2 cursor-pointer">
+                    <span id="btn-text">Enviar Mensaje</span>
+                    <i data-lucide="send" class="w-4 h-4"></i>
                 </button>
-                <div id="form-toast" class="hidden p-4 rounded-xl text-center text-sm font-semibold transition-all"></div>
+                <div id="form-alert" class="hidden p-4 rounded-xl text-xs font-medium text-center"></div>
             </form>
         </div>
     </section>
     <!-- FOOTER -->
-    <footer class="bg-sand-900 text-sand-200 py-16 px-6 border-t border-sand-800">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 mb-12">
-            <div class="space-y-4">
-                <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-lg bg-sand-600 flex items-center justify-center">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 17L10 11L14 15L20 9" stroke="#F9F7F4" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <span class="font-bold tracking-widest text-lg text-sand-50">NEXUM</span>
+    <footer class="py-12 border-t border-neutral-800 text-neutral-500 text-xs">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 bg-brand-600 rounded-md flex items-center justify-center text-white">
+                    <i data-lucide="zap" class="w-4 h-4"></i>
                 </div>
-                <p class="text-xs text-sand-200/60 leading-relaxed">
-                    Especialistas en movilidad corporativa y logística de precisión. Experiencia y control en cada viaje.
-                </p>
+                <span class="font-bold text-white text-sm">RedPulse Automation</span>
             </div>
-            <div>
-                <h4 class="text-xs font-bold text-sand-500 uppercase tracking-wider mb-4">Navegación</h4>
-                <ul class="space-y-2 text-xs">
-                    <li><a href="#quienes-somos" class="hover:text-sand-50 transition-colors">Quiénes Somos</a></li>
-                    <li><a href="#beneficios" class="hover:text-sand-50 transition-colors">Beneficios</a></li>
-                    <li><a href="#ofrecemos" class="hover:text-sand-50 transition-colors">Qué Ofrecemos</a></li>
-                    <li><a href="#equipo" class="hover:text-sand-50 transition-colors">Equipo</a></li>
-                </ul>
+
+            <p>© 2026 RedPulse Automation. Todos los derechos reservados.</p>
+
+            <div class="flex items-center gap-4">
+                <a href="#" class="hover:text-brand-500 transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-brand-500 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-brand-500 transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
             </div>
-            <div>
-                <h4 class="text-xs font-bold text-sand-500 uppercase tracking-wider mb-4">Servicios</h4>
-                <ul class="space-y-2 text-xs">
-                    <li><a href="#" class="hover:text-sand-50 transition-colors">Transporte Ejecutivo</a></li>
-                    <li><a href="#" class="hover:text-sand-50 transition-colors">Rutas de Personal</a></li>
-                    <li><a href="#" class="hover:text-sand-50 transition-colors">Logística Crítica</a></li>
-                    <li><a href="#" class="hover:text-sand-50 transition-colors">Gestión de Flotas</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-xs font-bold text-sand-500 uppercase tracking-wider mb-4">Contacto</h4>
-                <p class="text-xs text-sand-200/60 mb-2">Central Operativa: Caracas / Guarenas / Guatire</p>
-                <p class="text-xs text-sand-200/60 mb-2">Email: contacto@nexumlogistics.com</p>
-                <p class="text-xs font-semibold text-sand-500">+58 (212) 000-NEXUM</p>
-            </div>
-        </div>
-        <div class="max-w-6xl mx-auto pt-8 border-t border-sand-800/80 flex flex-col md:flex-row items-center justify-between text-xs text-sand-200/40 gap-4">
-            <p>© 2026 NEXUM Corporate Mobility. Todos los derechos reservados.</p>
-            <p>Diseño y Desarrollo Minimalista de Alta Eficiencia.</p>
         </div>
     </footer>
     <script src="main.js"></script>
